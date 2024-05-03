@@ -51,5 +51,5 @@ app.get("/get-user/:uId", userController.getUserById);
 app.post("/login", userController.login);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });

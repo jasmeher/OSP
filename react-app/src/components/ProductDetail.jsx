@@ -44,38 +44,32 @@ function ProductDetail() {
       PRODUCT DETAILS :
       <div>
         {product && (
-          <div className="d-flex justify-content-between flex-wrap">
-            <div>
+          <div className="d-flex justify-content-between flex-column flex-md-row">
+            <div className="d-flex flex-column">
               <img
                 src={API_URL + "/" + product.pimage}
                 alt=""
-                style={{
-                  width: "40%",
-                }}
-                className="me-2"
+                className="img-fluid"
               />
               {product.pimage2 && (
                 <img
                   src={API_URL + "/" + product.pimage2}
                   alt=""
-                  style={{
-                    width: "40%",
-                  }}
+                  className="img-fluid"
                 />
               )}
-              <h6> Product Details : </h6>
-              {product.pdesc}
             </div>
-            <div>
-              <h3 className="m-2 price-text"> Rs. {product.price} /- </h3>
-              <p className="m-2">
-                {" "}
-                {product.pname} | {product.category}{" "}
-              </p>
-              <p className="m-2 text-success"> {product.pdesc} </p>
+            <div style={{ width: "40%", minWidth: "300px" }}>
+              <p className="display-1"> {product.pname}</p>
+              <h3 className="price-text h1"> Rs. {product.price} /- </h3>
+              <p className="lead">{product.category} </p>
+              <p className=" text-success"> {product.pdesc} </p>
 
               {product.addedBy && (
-                <button onClick={() => handleContact(product.addedBy)}>
+                <button
+                  className="btn btn-success"
+                  onClick={() => handleContact(product.addedBy)}
+                >
                   SHOW CONTACT DETAILS
                 </button>
               )}
