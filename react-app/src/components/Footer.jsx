@@ -30,7 +30,7 @@ const Footer = () => {
           </Link>
         </p>
 
-        <p className="footer-company-name">Company Name © 2015</p>
+        <p className="footer-company-name">Online Sales and Purchase © 2024</p>
       </div>
 
       <div className="footer-center">
