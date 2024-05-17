@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { useState } from "react";
 import axios from "axios";
 import API_URL from "../constants";
 
 function Signup() {
+  const navigate = useNavigate();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [email, setemail] = useState("");
@@ -18,6 +19,7 @@ function Signup() {
       .then((res) => {
         if (res.data.message) {
           alert(res.data.message);
+          navigate("/");
         }
       })
       .catch((err) => {

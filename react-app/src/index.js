@@ -17,6 +17,7 @@ import CategoryPage from "./components/CategoryPage";
 import MyProducts from "./components/MyProducts";
 import MyProfile from "./components/MyProfile";
 import About from "./components/About";
+import Admin from "./components/Admin";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "/my-profile",
     element: <MyProfile />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
 ]);
 

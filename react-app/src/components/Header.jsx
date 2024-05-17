@@ -21,11 +21,6 @@ function Header(props) {
       longitude: 77.209,
       placeName: "New Delhi, Delhi",
     },
-    {
-      latitude: 19.076,
-      longitude: 72.8777,
-      placeName: "Mumbai, Maharashtra",
-    },
   ];
 
   return (
@@ -137,8 +132,18 @@ function Header(props) {
               )}
             </div>
             <div>
+              {!!localStorage.getItem("token") && (
+                <Link to="/admin">
+                  <button className="logout-btn">ADMIN </button>
+                </Link>
+              )}
+            </div>
+            <div>
               {!localStorage.getItem("token") ? (
-                <Link to="/login"> LOGIN </Link>
+                <Link to="/login">
+                  {" "}
+                  <button className="logout-btn">LOGIN</button>{" "}
+                </Link>
               ) : (
                 <button className="logout-btn" onClick={handleLogout}>
                   {" "}

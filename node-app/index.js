@@ -48,6 +48,7 @@ app.post("/my-products", productController.myProducts);
 app.post("/signup", userController.signup);
 app.get("/my-profile/:userId", userController.myProfileById);
 app.get("/get-user/:uId", userController.getUserById);
+app.get("/get-users", userController.getUsers);
 app.post("/login", userController.login);
 
 app.listen(port, () => {
